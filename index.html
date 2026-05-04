@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TANEO Permitting Dashboard — Project Roster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="title-block">
+    <p class="pub-name">Texas Advanced Nuclear Energy Office</p>
+    <h1>Permitting Dashboard</h1>
+  </div>
+  <div class="meta">
+    <span>Beta — Vol. 1, No. 1</span>
+    <span id="last-updated">Last updated: —</span>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="index.html" class="active">Project Roster</a>
+  <a href="matrix.html">Permit Matrix</a>
+  <a href="guide.html">Regulatory Guide</a>
+</nav>
+
+<p class="lede">
+  A unified view of nuclear power projects in Texas and their progress through federal,
+  state, and grid permitting. Each project links to a detailed timeline of NRC and state
+  permit milestones. Adapted from the Foundation for American Innovation's plug-and-play
+  permitting transparency model and Virginia's Permitting Enhancement and Evaluation Platform.
+</p>
+
+<div class="kpi-banner" id="kpi-banner">
+  <!-- Populated by JS -->
+</div>
+
+<h2>Active and Proposed Texas Nuclear Projects</h2>
+
+<div class="table-scroll">
+<table id="project-table" class="striped">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Developer</th>
+      <th>Technology</th>
+      <th class="num">Capacity (MWe)</th>
+      <th>County</th>
+      <th>NRC Status</th>
+      <th class="center">State Permits</th>
+      <th>TANDF</th>
+      <th>Target Ops</th>
+    </tr>
+  </thead>
+  <tbody id="project-tbody">
+    <tr><td colspan="9" style="text-align:center; color:var(--gray-70);">Loading project data…</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>About This Dashboard</h2>
+
+<div class="split-2">
+  <div>
+    <h3>What it does</h3>
+    <p>This dashboard tracks every nuclear power project in Texas, the permits each one needs from federal and state agencies, and the milestone-level progress of each permit. The unit of analysis is the project — but every permit and every step within it is visible.</p>
+    <p>Click any project name to see its full permit timeline, organized by agency. Cross-project comparisons live on the <a href="matrix.html">Permit Matrix</a>. The <a href="guide.html">Regulatory Guide</a> documents what each Texas state permit requires, who issues it, and how long it takes.</p>
+  </div>
+  <div>
+    <h3>What it does not do</h3>
+    <p>This is a beta. Data is curated manually from public sources, not pulled from live agency feeds. Some milestone dates — particularly NRC review schedules and state permit applications that have not been filed — carry the flags below to mark uncertainty:</p>
+    <ul style="font-family: var(--mono); font-size: 12px;">
+      <li><span class="flag estimate">[ESTIMATE]</span> developer-stated date, not confirmed by agency record</li>
+      <li><span class="flag gap">[GAP]</span> data not publicly available; TANEO/developer input needed</li>
+      <li><span class="flag projected">[PROJECTED]</span> pre-application stage; permits anticipated, not yet filed</li>
+    </ul>
+    <p>The aim is to show what is known, mark what is not, and never confuse the two.</p>
+  </div>
+</div>
+
+<footer class="colophon">
+  <p><strong>Sources.</strong> NRC docket data via <a href="https://www.nrc.gov">nrc.gov</a> project pages; state permit requirements via <a href="https://www.tceq.texas.gov">tceq.texas.gov</a>, <a href="https://www.dshs.texas.gov/texas-radiation-control">dshs.texas.gov</a>, and <a href="https://www.ercot.com/services/rq/integration">ercot.com</a>; TANDF program detail via <a href="https://gov.texas.gov/taneo">gov.texas.gov/taneo</a>. Project data verified as of last updated date shown above. Methodology adapted from Samuel Roland, "Simple, Cheap, Effective, &amp; Scalable: A Plug-and-Play Model for State Permitting Transparency" (Foundation for American Innovation, October 2025).</p>
+  <p><strong>Beta status.</strong> This is a beta build for TANEO internal review. Permit data is illustrative of the regulatory landscape; for authoritative status of any specific permit, consult the issuing agency directly.</p>
+</footer>
+
+<script src="scripts/data-loader.js"></script>
+<script>
+loadAllData().then(({ projects, permits, milestones, metadata }) => {
+  setLastUpdated(metadata);
+
+  // KPI banner. Pipeline = projects NOT yet operating. We aggregate capacity
+  // separately for pipeline vs. operating fleet so the headline number isn't
+  // inflated by existing reactors.
+  const totalProjects = projects.length;
+  const pipelineProjects = projects.filter(p => !isOperating(p));
+  const operatingProjects = projects.filter(p => isOperating(p));
+  const pipelineCapacity = pipelineProjects.reduce((s, p) => s + (p.capacity_mwe_total || 0), 0);
+  const operatingCapacity = operatingProjects.reduce((s, p) => s + (p.capacity_mwe_total || 0), 0);
+
+  // "Under federal review" = an NRC application has been filed and is in
+  // active staff review (docketed, accepted for review, EIS scoping, ASLB,
+  // or otherwise underway). Excludes pre-application engagement and
+  // applications still being prepared.
+  const underReview = projects.filter(p => {
+    const s = (p.overall_status || '').toLowerCase();
+    return /review underway|accepted|scoping|aslb|underway/.test(s) && !s.includes('preparation');
+  }).length;
+
+  document.getElementById('kpi-banner').innerHTML = `
+    <div class="kpi">
+      <div class="kpi-label">Tracked projects</div>
+      <div class="kpi-value">${totalProjects}</div>
+      <div class="kpi-unit">Pipeline + operating fleet</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Commercial pipeline capacity</div>
+      <div class="kpi-value">${(pipelineCapacity / 1000).toFixed(1)}</div>
+      <div class="kpi-unit">GWe under development (excludes 2 research reactors)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Under NRC review</div>
+      <div class="kpi-value">${underReview}</div>
+      <div class="kpi-unit">Applications in active review</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Operating fleet</div>
+      <div class="kpi-value">${operatingProjects.length}</div>
+      <div class="kpi-unit">${(operatingCapacity / 1000).toFixed(1)} GWe in service</div>
+    </div>
+  `;
+
+  // Project table
+  const tbody = document.getElementById('project-tbody');
+  tbody.innerHTML = '';
+
+  projects.forEach(p => {
+    const statePermits = permits.filter(perm => perm.project_id === p.project_id && perm.jurisdiction_level === 'State');
+    const stateApproved = statePermits.filter(perm => perm.status === STATUS.APPROVED).length;
+    const stateUnderReview = statePermits.filter(perm => perm.status === STATUS.UNDER_REVIEW).length;
+    const stateTotal = statePermits.length;
+
+    const stateCellHtml = stateTotal === 0
+      ? flagHtml('GAP')
+      : `<span class="mono">${stateApproved}/${stateTotal}</span>` +
+        (stateUnderReview > 0 ? ` <span class="badge in-progress">+${stateUnderReview} in review</span>` : '');
+
+    const capacityCell = p.capacity_mwe_total > 0
+      ? p.capacity_mwe_total.toLocaleString() + (p.capacity_flag ? ' ' + flagHtml(p.capacity_flag) : '')
+      : '<span class="placeholder-text">research</span>';
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td><a class="project-link" href="project.html?id=${encodeURIComponent(p.project_id)}">${escapeHtml(p.project_name)}</a></td>
+      <td>${escapeHtml(p.developer)}</td>
+      <td>${escapeHtml(p.technology)}<br><span class="mono" style="font-size:10px;color:var(--gray-70);">${p.reactor_count} unit${p.reactor_count > 1 ? 's' : ''}</span></td>
+      <td class="num">${capacityCell}</td>
+      <td>${escapeHtml(p.site_county)}</td>
+      <td>${statusBadge(firstClause(p.overall_status))}</td>
+      <td class="center">${stateCellHtml}</td>
+      <td><span class="mono" style="font-size:11px;">${escapeHtml(firstClause(p.tandf_status))}</span></td>
+      <td>${valueWithFlag(p.target_commercial_ops, p.target_commercial_ops_flag)}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}).catch(err => {
+  document.getElementById('project-tbody').innerHTML = '';
+  document.getElementById('kpi-banner').innerHTML = '';
+  renderLoadError(err, 'main, body');
+  console.error(err);
+});
+</script>
+
+</body>
+</html>

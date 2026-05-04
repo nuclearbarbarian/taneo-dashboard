@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "last_updated": "2026-05-04",
+    "data_source_note": "Manually curated from NRC, TCEQ, ERCOT, and developer public records. This is a beta dataset; gaps and developer estimates are flagged inline.",
+    "ultan_flags": {
+      "ESTIMATE": "Developer-stated date not confirmed by agency record",
+      "GAP": "Data not publicly available; requires TANEO/developer input",
+      "PROJECTED": "Pre-application stage; permit requirements anticipated, not yet filed",
+      "DATED": "Information older than 6 months as of last_updated",
+      "OPERATIONAL": "Existing operating reactor; date is historical, not a target"
+    }
+  },
+  "projects": [
+    {
+      "project_id": "LONG_MOTT",
+      "project_name": "Long Mott Generating Station",
+      "developer": "Long Mott Energy, LLC (Dow / X-energy)",
+      "technology": "Xe-100 HTGR",
+      "reactor_count": 4,
+      "capacity_mwe_per_unit": 80,
+      "capacity_mwe_total": 320,
+      "capacity_mwt_total": 800,
+      "cooling_type": "Helium primary; water-steam secondary",
+      "purpose": "Industrial cogeneration (electricity + process steam) for Dow UCC Seadrift Operations",
+      "site_county": "Calhoun",
+      "site_locality": "Seadrift",
+      "lat": 28.4133,
+      "lon": -96.71,
+      "nrc_docket": "50-614",
+      "nrc_application_type": "Construction Permit (10 CFR Part 50)",
+      "nrc_application_date": "2025-03-31",
+      "nrc_acceptance_date": "2025-05-12",
+      "nrc_target_decision": "2026-Q4",
+      "tandf_status": "Eligible \u2014 application window open",
+      "overall_status": "NRC review underway; EA + FONSI targeted June 2026; SER targeted November 2026; ASLB hearing process active",
+      "is_operational": false,
+      "target_construction_start": "2026",
+      "target_commercial_ops": "Early 2030s",
+      "target_commercial_ops_flag": "ESTIMATE",
+      "sources": [
+        {
+          "label": "Federal Register 90 FR 24428 \u2014 Long Mott Construction Permit Application (June 10, 2025)",
+          "url": "https://www.federalregister.gov/documents/2025/06/10/2025-10505/long-mott-energy-llc-long-mott-generating-station-construction-permit-application"
+        },
+        {
+          "label": "NRC Long Mott project page",
+          "url": "https://www.nrc.gov/reactors/new-reactors/advanced/who-were-working-with/applicant-projects/long-mott"
+        },
+        {
+          "label": "NRC Construction Permit Review Schedule (ML25155B841)",
+          "url": "https://www.nrc.gov/docs/ML2515/ML25155B841.pdf"
+        },
+        {
+          "label": "Federal Register — ASLB Establishment for Long Mott (Aug 19, 2025)",
+          "url": "https://www.federalregister.gov/documents/2025/08/19/2025-15706/long-mott-energy-llc-establishment-of-atomic-safety-and-licensing-board"
+        },
+        {
+          "label": "Federal Register — ASLB Hearing Notice (Feb 20, 2026)",
+          "url": "https://www.federalregister.gov/documents/2026/02/20/2026-03415/atomic-safety-and-licensing-board-panel-before-administrative-judges-stefan-r-wolfe-chair-dr-david-a"
+        }
+      ],
+      "capacity_source": {
+        "label": "X-energy Xe-100 reactor specifications (80 MWe / 200 MWt per unit)",
+        "url": "https://x-energy.com/reactors/xe-100"
+      }
+    },
+    {
+      "project_id": "FERMI_MATADOR",
+      "project_name": "Fermi America \u2014 Project Matador",
+      "developer": "Fermi America (Westinghouse partner)",
+      "technology": "Westinghouse AP1000",
+      "reactor_count": 4,
+      "capacity_mwe_per_unit": 1117,
+      "capacity_mwe_total": 4468,
+      "capacity_mwt_total": 13600,
+      "cooling_type": "Closed-cycle wet cooling tower (per AP1000 standard)",
+      "purpose": "Anchor 11 GW hybrid energy and data infrastructure campus near Pantex Plant",
+      "site_county": "Carson",
+      "site_locality": "Near Amarillo (5,800-acre Texas Tech University leased site)",
+      "lat": 35.3625,
+      "lon": -101.555,
+      "nrc_docket": "52-051, 52-052, 52-053, 52-054",
+      "nrc_application_type": "Combined License (10 CFR Part 52)",
+      "nrc_application_date": "2025-06-17",
+      "nrc_acceptance_date": "2025-09-10",
+      "nrc_eis_scoping_notice": "2026-03-20",
+      "nrc_target_decision": "GAP",
+      "tandf_status": "Eligible \u2014 application window open",
+      "overall_status": "COLA Parts 1 and 2 accepted by NRC (Sept 10, 2025); first new large LWR COLA accepted since the 2007\u20132009 wave; environmental scoping underway",
+      "is_operational": false,
+      "target_construction_start": "GAP",
+      "target_commercial_ops": "2032",
+      "target_commercial_ops_flag": "ESTIMATE",
+      "sources": [
+        {
+          "label": "NRC Fermi America COLA page",
+          "url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/col/fermi-energy-intel-campus"
+        },
+        {
+          "label": "Power Magazine \u2014 NRC Accepts Fermi COLA",
+          "url": "https://www.powermag.com/nrc-accepts-cola-for-fermi-americas-behemoth-four-unit-ap1000-nuclear-plant-in-texas/"
+        }
+      ],
+      "capacity_source": {
+        "label": "NRC AP1000 Design Certification (1117 MWe gross / 3400 MWt per unit)",
+        "url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/design-cert/ap1000.html"
+      }
+    },
+    {
+      "project_id": "LAST_HASKELL",
+      "project_name": "Last Energy Haskell County Plant",
+      "developer": "Last Energy",
+      "technology": "PWR-20 microreactor (modular)",
+      "reactor_count": 30,
+      "capacity_mwe_per_unit": 20,
+      "capacity_mwe_total": 600,
+      "capacity_mwt_total": 1800,
+      "cooling_type": "Closed-cycle (small modular)",
+      "purpose": "Dedicated power supply for Texas data centers",
+      "site_county": "Haskell",
+      "site_locality": "Site control on 200 acres",
+      "lat": 33.1581,
+      "lon": -99.7345,
+      "nrc_docket": "99902140 (vendor pre-application; no site docket)",
+      "nrc_application_type": "Anticipated Early Site Permit pathway",
+      "nrc_application_date": "GAP",
+      "nrc_acceptance_date": "GAP",
+      "nrc_target_decision": "GAP",
+      "tandf_status": "Not yet docketed at NRC; eligible for development/supply chain track only",
+      "overall_status": "NRC pre-application engagement; site control obtained",
+      "is_operational": false,
+      "target_construction_start": "GAP",
+      "target_commercial_ops": "GAP",
+      "target_commercial_ops_flag": "PROJECTED",
+      "sources": [
+        {
+          "label": "NRC Last Energy pre-application",
+          "url": "https://www.nrc.gov/reactors/new-reactors/advanced/who-were-working-with/pre-application-activities/last-energy"
+        },
+        {
+          "label": "World Nuclear News \u2014 Last Energy Texas",
+          "url": "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant"
+        }
+      ],
+      "capacity_source": {
+        "label": "Last Energy PWR-20 specifications (20 MWe per unit) \u2014 vendor self-reported [ESTIMATE]",
+        "url": "https://www.lastenergy.com/"
+      },
+      "capacity_flag": "ESTIMATE"
+    },
+    {
+      "project_id": "ACU_MSRR",
+      "project_name": "ACU Molten Salt Research Reactor (MSRR)",
+      "developer": "Abilene Christian University / Natura Resources",
+      "technology": "Natura MSR-1 (liquid-fueled molten salt)",
+      "reactor_count": 1,
+      "capacity_mwe_per_unit": 0,
+      "capacity_mwe_total": 0,
+      "capacity_mwt_total": 1,
+      "cooling_type": "Molten salt; air-cooled secondary",
+      "purpose": "University research reactor (NEXT Lab); first NRC-licensed liquid-salt-fueled reactor in U.S. history",
+      "site_county": "Taylor",
+      "site_locality": "Abilene Christian University campus, Abilene",
+      "lat": 32.4664,
+      "lon": -99.7095,
+      "nrc_docket": "50-610 (Construction Permit CPRR-124)",
+      "nrc_application_type": "Class 104 Research Reactor (10 CFR Part 50)",
+      "nrc_application_date": "2022-08-15",
+      "nrc_acceptance_date": "GAP",
+      "nrc_target_decision": "2024-09-16 (CP issued); OL application target was H1 2025 [DATED]",
+      "tandf_status": "Texas Legislature appropriated $120M (89th Session, 2025) to TTU/ACU/Natura partnership for MSR-1 and produced-water research; eligible for TANDF design/supply chain portions",
+      "overall_status": "Construction Permit issued Sept 16, 2024; Operating License application in preparation",
+      "is_operational": false,
+      "target_construction_start": "2024",
+      "target_commercial_ops": "GAP",
+      "target_commercial_ops_flag": "GAP",
+      "sources": [
+        {
+          "label": "NRC MSRR ACU page",
+          "url": "https://www.nrc.gov/reactors/non-power/new-facility-licensing/msrr-acu"
+        },
+        {
+          "label": "Federal Register \u2014 ACU MSRR CP (Sept 20, 2024)",
+          "url": "https://www.federalregister.gov/documents/2024/09/20/2024-21468/abilene-christian-university-molten-salt-research-reactor-construction-permit"
+        },
+        {
+          "label": "ACU \u2014 Texas Legislature funds water desalination through TTU/ACU/Natura partnership (July 1, 2025)",
+          "url": "https://acu.edu/2025/07/01/texas-legislature-funds-water-desalination-through-texas-tech-acu-natura-resources-partnership/"
+        }
+      ],
+      "capacity_source": {
+        "label": "NRC MSRR construction permit CPRR-124 (1 MWt licensed maximum)",
+        "url": "https://www.nrc.gov/reactors/non-power/new-facility-licensing/msrr-acu"
+      }
+    },
+    {
+      "project_id": "TAMU_ZJ0",
+      "project_name": "Texas A&M / ZettaJoule ZJ0 Research Reactor",
+      "developer": "Texas A&M Engineering Experiment Station (TEES) / ZettaJoule",
+      "technology": "ZJ0 high-temperature gas-cooled (HTGR)",
+      "reactor_count": 1,
+      "capacity_mwe_per_unit": 0,
+      "capacity_mwe_total": 0,
+      "capacity_mwt_total": 30,
+      "cooling_type": "Helium gas (process heat up to 950\u00b0C)",
+      "purpose": "Research reactor adjacent to TEES Nuclear Engineering & Science Center",
+      "site_county": "Brazos",
+      "site_locality": "TAMU campus, College Station",
+      "lat": 30.6203,
+      "lon": -96.3403,
+      "nrc_docket": "GAP \u2014 not assigned",
+      "nrc_application_type": "Anticipated Class 104 Research Reactor (10 CFR Part 50)",
+      "nrc_application_date": "GAP",
+      "nrc_acceptance_date": "GAP",
+      "nrc_target_decision": "GAP",
+      "tandf_status": "Not yet docketed; potentially eligible for design/supply chain support",
+      "overall_status": "Non-binding MOU signed Feb 26, 2026; preliminary design phase (~1 year) before formal pre-application",
+      "is_operational": false,
+      "target_construction_start": "GAP",
+      "target_commercial_ops": "2031\u20132033",
+      "target_commercial_ops_flag": "ESTIMATE",
+      "sources": [
+        {
+          "label": "Texas A&M Stories \u2014 ZettaJoule Agreement",
+          "url": "https://stories.tamu.edu/news/2026/02/26/texas-am-engineering-experiment-station-zettajoule-sign-agreement-to-explore-building-transformative-gas-research-reactor/"
+        },
+        {
+          "label": "ANS \u2014 TAMU ZettaJoule MOU",
+          "url": "https://www.ans.org/news/article-7811/texas-am-partners-with-smr-startup-for-potential-htgr-research-reactor/"
+        }
+      ],
+      "capacity_source": {
+        "label": "TAMU/ZettaJoule MOU announcement (capacity rating not yet publicly fixed) [ESTIMATE]",
+        "url": "https://stories.tamu.edu/news/2026/02/26/texas-am-engineering-experiment-station-zettajoule-sign-agreement-to-explore-building-transformative-gas-research-reactor/"
+      }
+    },
+    {
+      "project_id": "STP",
+      "project_name": "South Texas Project (Units 1 and 2)",
+      "developer": "STP Nuclear Operating Company (STPNOC) \u2014 owners: NRG Energy, CPS Energy, Austin Energy",
+      "technology": "Westinghouse 4-loop PWR",
+      "reactor_count": 2,
+      "capacity_mwe_per_unit": 1280,
+      "capacity_mwe_total": 2560,
+      "capacity_mwt_total": 7706,
+      "cooling_type": "Main Cooling Reservoir (closed-cycle, Colorado River makeup)",
+      "purpose": "Existing baseload commercial generation; one of two operating Texas nuclear stations (commissioned before Comanche Peak)",
+      "site_county": "Matagorda",
+      "site_locality": "Near Bay City",
+      "lat": 28.795,
+      "lon": -96.045,
+      "nrc_docket": "50-498 (Unit 1), 50-499 (Unit 2)",
+      "nrc_application_type": "License Renewal (operating license extension)",
+      "nrc_application_date": "2010-10-25",
+      "nrc_acceptance_date": "GAP",
+      "nrc_target_decision": "2017 (renewed licenses issued)",
+      "tandf_status": "Operational fleet \u2014 TANDF eligibility limited to potential new units at site",
+      "overall_status": "Operating; license renewed November 2017 (Unit 1 to 2047; Unit 2 to 2048)",
+      "is_operational": true,
+      "target_construction_start": null,
+      "target_commercial_ops": "Unit 1 in service since 1988; Unit 2 since 1989",
+      "target_commercial_ops_flag": "OPERATIONAL",
+      "sources": [
+        {
+          "label": "NRC South Texas Project Operating Reactors page",
+          "url": "https://www.nrc.gov/info-finder/reactors/stp1.html"
+        },
+        {
+          "label": "NRC South Texas Project License Renewal",
+          "url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/south-texas.html"
+        }
+      ],
+      "capacity_source": {
+        "label": "NRC South Texas Project Unit 1 reactor info finder (3,853 MWt licensed thermal per unit)",
+        "url": "https://www.nrc.gov/info-finder/reactors/stp1.html"
+      }
+    },
+    {
+      "project_id": "COMANCHE_PEAK",
+      "project_name": "Comanche Peak Nuclear Power Plant (Units 1 and 2)",
+      "developer": "Vistra (Luminant subsidiary)",
+      "technology": "Westinghouse 4-loop PWR",
+      "reactor_count": 2,
+      "capacity_mwe_per_unit": 1200,
+      "capacity_mwe_total": 2400,
+      "capacity_mwt_total": 7224,
+      "cooling_type": "Squaw Creek Reservoir (closed-cycle)",
+      "purpose": "Existing baseload commercial generation; license renewed for continued operation through 2050/2053",
+      "site_county": "Somervell",
+      "site_locality": "Glen Rose",
+      "lat": 32.2986,
+      "lon": -97.7864,
+      "nrc_docket": "50-445 (Unit 1), 50-446 (Unit 2)",
+      "nrc_application_type": "License Renewal (operating license extension)",
+      "nrc_application_date": "2022-10-03",
+      "nrc_acceptance_date": "GAP",
+      "nrc_target_decision": "2024-07 (renewed licenses issued)",
+      "tandf_status": "Operational fleet \u2014 TANDF eligibility limited; potential exploration of new units at site",
+      "overall_status": "Operating; license renewed July 2024 (Unit 1 to 2050; Unit 2 to 2053)",
+      "is_operational": true,
+      "target_construction_start": null,
+      "target_commercial_ops": "Unit 1 in service since 1990; Unit 2 since 1993",
+      "target_commercial_ops_flag": "OPERATIONAL",
+      "sources": [
+        {
+          "label": "NRC Comanche Peak License Renewal",
+          "url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/comanche-peak"
+        },
+        {
+          "label": "Vistra \u2014 Comanche Peak License Extension Announcement",
+          "url": "https://investor.vistracorp.com/2024-07-30-Vistra-Receives-Approval-to-Operate-Comanche-Peak-Nuclear-Plant-Through-2053"
+        }
+      ],
+      "capacity_source": {
+        "label": "NRC Comanche Peak Unit 1 reactor info finder (3,612 MWt licensed thermal per unit)",
+        "url": "https://www.nrc.gov/info-finder/reactors/cp1.html"
+      }
+    }
+  ]
+}

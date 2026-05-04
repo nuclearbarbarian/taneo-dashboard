@@ -1,0 +1,364 @@
+{
+  "metadata": {
+    "last_updated": "2026-05-04",
+    "note": "Milestone detail by permit. Only populated where verifiable from agency records. Status: Pending = not started; In Progress = active; Complete = milestone achieved; Delayed = past target with no completion. Dates in ISO 8601."
+  },
+  "milestones": [
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 1,
+      "milestone_code": "PRE_APP",
+      "milestone_name": "Pre-application engagement",
+      "responsible_party": "Applicant + NRC",
+      "date_target": "2024-12-31",
+      "date_actual": "2025-03-30",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/advanced/who-were-working-with/applicant-projects/long-mott"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 2,
+      "milestone_code": "APP_FILED",
+      "milestone_name": "Application submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2025-03-31",
+      "date_actual": "2025-03-31",
+      "status": "Complete",
+      "source_url": "https://www.ans.org/news/2025-05-15/article-7026/nrc-dockets-construction-permit-for-dow-xenergy-smr/"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 3,
+      "milestone_code": "APP_ACCEPTED",
+      "milestone_name": "Application docketed (accepted for review)",
+      "responsible_party": "NRC",
+      "date_target": "2025-05-30",
+      "date_actual": "2025-05-12",
+      "status": "Complete",
+      "source_url": "https://www.ans.org/news/2025-05-15/article-7026/nrc-dockets-construction-permit-for-dow-xenergy-smr/"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 4,
+      "milestone_code": "ASLB_ESTABLISHED",
+      "milestone_name": "Atomic Safety and Licensing Board established",
+      "responsible_party": "NRC",
+      "date_target": "2025-08-15",
+      "date_actual": "2025-08-19",
+      "status": "Complete",
+      "source_url": "https://www.federalregister.gov/documents/2025/08/19/2025-15706/long-mott-energy-llc-establishment-of-atomic-safety-and-licensing-board"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 5,
+      "milestone_code": "INTERVENTION",
+      "milestone_name": "Intervention petition admitted (San Antonio Bay Estuarine Waterkeeper)",
+      "responsible_party": "NRC ASLB",
+      "date_target": "2026-01-31",
+      "date_actual": "2026-01-15",
+      "status": "Complete",
+      "source_url": "https://www.federalregister.gov/documents/2025/08/19/2025-15706/long-mott-energy-llc-establishment-of-atomic-safety-and-licensing-board"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 6,
+      "milestone_code": "HEARING_NOTICE",
+      "milestone_name": "Hearing notice issued",
+      "responsible_party": "NRC ASLB",
+      "date_target": "2026-02-28",
+      "date_actual": "2026-02-20",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/advanced/who-were-working-with/applicant-projects/long-mott"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 7,
+      "milestone_code": "EA_FONSI",
+      "milestone_name": "Environmental Assessment + FONSI complete",
+      "responsible_party": "NRC Staff",
+      "date_target": "2026-06-30",
+      "date_actual": null,
+      "status": "In Progress",
+      "source_url": "https://www.nrc.gov/docs/ML2515/ML25155B841.pdf"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 8,
+      "milestone_code": "SAFETY_REVIEW",
+      "milestone_name": "Safety Evaluation Report (SER) complete",
+      "responsible_party": "NRC Staff",
+      "date_target": "2026-11-30",
+      "date_actual": null,
+      "status": "In Progress",
+      "source_url": "https://www.nrc.gov/docs/ML2515/ML25155B841.pdf"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 9,
+      "milestone_code": "HEARING",
+      "milestone_name": "Mandatory ASLB hearing (date TBD by presiding officer)",
+      "responsible_party": "NRC ASLB",
+      "date_target": "2026-12-15",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": "https://www.federalregister.gov/documents/2026/02/20/2026-03415/atomic-safety-and-licensing-board-panel-before-administrative-judges-stefan-r-wolfe-chair-dr-david-a"
+    },
+    {
+      "permit_id": "LONG_MOTT-NRC-CP",
+      "milestone_seq": 10,
+      "milestone_code": "LICENSE_ISSUED",
+      "milestone_name": "Construction Permit decision",
+      "responsible_party": "NRC Commissioners",
+      "date_target": "2026-12-31",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": "https://www.nrc.gov/docs/ML2515/ML25155B841.pdf"
+    },
+
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 1,
+      "milestone_code": "PRE_APP",
+      "milestone_name": "Pre-application engagement",
+      "responsible_party": "Applicant + NRC",
+      "date_target": "2025-06-15",
+      "date_actual": "2025-06-15",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/col/fermi-energy-intel-campus"
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 2,
+      "milestone_code": "APP_PART1",
+      "milestone_name": "COLA Part 1 submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2025-06-17",
+      "date_actual": "2025-06-17",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/col/fermi-energy-intel-campus"
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 3,
+      "milestone_code": "APP_PART2",
+      "milestone_name": "COLA Part 2 submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2025-08-20",
+      "date_actual": "2025-08-20",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/col/fermi-energy-intel-campus"
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 4,
+      "milestone_code": "APP_ACCEPTED",
+      "milestone_name": "Application accepted for review",
+      "responsible_party": "NRC",
+      "date_target": "2025-09-30",
+      "date_actual": "2025-09-10",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/col/fermi-energy-intel-campus"
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 5,
+      "milestone_code": "EIS_SCOPING",
+      "milestone_name": "Environmental scoping notice published",
+      "responsible_party": "NRC Staff",
+      "date_target": "2026-03-31",
+      "date_actual": "2026-03-20",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/new-reactors/large-lwr/col/fermi-energy-intel-campus"
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 6,
+      "milestone_code": "APP_COMPLETE",
+      "milestone_name": "Site-specific application portions submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2026-12-31",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 7,
+      "milestone_code": "SAFETY_REVIEW",
+      "milestone_name": "Safety Evaluation Report complete",
+      "responsible_party": "NRC Staff",
+      "date_target": "2028-06-30",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 8,
+      "milestone_code": "EIS_FINAL",
+      "milestone_name": "Final Environmental Impact Statement",
+      "responsible_party": "NRC Staff",
+      "date_target": "2028-06-30",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 9,
+      "milestone_code": "HEARING",
+      "milestone_name": "Mandatory ASLB hearing",
+      "responsible_party": "NRC ASLB",
+      "date_target": "2029-06-30",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+    {
+      "permit_id": "FERMI_MATADOR-NRC-COL",
+      "milestone_seq": 10,
+      "milestone_code": "LICENSE_ISSUED",
+      "milestone_name": "Combined License issued",
+      "responsible_party": "NRC Commissioners",
+      "date_target": "2029-12-31",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+
+    {
+      "permit_id": "ACU_MSRR-NRC-CP",
+      "milestone_seq": 1,
+      "milestone_code": "APP_FILED",
+      "milestone_name": "Construction Permit application submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2022-08-15",
+      "date_actual": "2022-08-15",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/non-power/new-facility-licensing/msrr-acu"
+    },
+    {
+      "permit_id": "ACU_MSRR-NRC-CP",
+      "milestone_seq": 2,
+      "milestone_code": "EA_FONSI",
+      "milestone_name": "Environmental Assessment / FONSI",
+      "responsible_party": "NRC Staff",
+      "date_target": "2024-06-30",
+      "date_actual": "2024-06-30",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/non-power/new-facility-licensing/msrr-acu"
+    },
+    {
+      "permit_id": "ACU_MSRR-NRC-CP",
+      "milestone_seq": 3,
+      "milestone_code": "LICENSE_ISSUED",
+      "milestone_name": "Construction Permit CPRR-124 issued",
+      "responsible_party": "NRC Commissioners",
+      "date_target": "2024-09-16",
+      "date_actual": "2024-09-16",
+      "status": "Complete",
+      "source_url": "https://www.federalregister.gov/documents/2024/09/20/2024-21468/abilene-christian-university-molten-salt-research-reactor-construction-permit"
+    },
+
+    {
+      "permit_id": "ACU_MSRR-NRC-OL",
+      "milestone_seq": 1,
+      "milestone_code": "APP_FILED",
+      "milestone_name": "Operating License application submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2025-06-30",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+    {
+      "permit_id": "ACU_MSRR-NRC-OL",
+      "milestone_seq": 2,
+      "milestone_code": "SAFETY_REVIEW",
+      "milestone_name": "Safety Evaluation Report",
+      "responsible_party": "NRC Staff",
+      "date_target": "2026-12-31",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+    {
+      "permit_id": "ACU_MSRR-NRC-OL",
+      "milestone_seq": 3,
+      "milestone_code": "LICENSE_ISSUED",
+      "milestone_name": "Operating License issued",
+      "responsible_party": "NRC Commissioners",
+      "date_target": "2027-06-30",
+      "date_actual": null,
+      "status": "Pending",
+      "source_url": null
+    },
+
+    {
+      "permit_id": "STP-NRC-RENEWAL",
+      "milestone_seq": 1,
+      "milestone_code": "APP_FILED",
+      "milestone_name": "License renewal application submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2010-10-25",
+      "date_actual": "2010-10-25",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/south-texas.html"
+    },
+    {
+      "permit_id": "STP-NRC-RENEWAL",
+      "milestone_seq": 2,
+      "milestone_code": "LICENSE_ISSUED",
+      "milestone_name": "Renewed licenses issued (Unit 1 to 2047; Unit 2 to 2048)",
+      "responsible_party": "NRC Commissioners",
+      "date_target": "2017-11-30",
+      "date_actual": "2017-11-30",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/south-texas.html"
+    },
+    {
+      "permit_id": "COMANCHE_PEAK-NRC-RENEWAL",
+      "milestone_seq": 1,
+      "milestone_code": "APP_FILED",
+      "milestone_name": "License renewal application submitted",
+      "responsible_party": "Applicant",
+      "date_target": "2022-10-03",
+      "date_actual": "2022-10-03",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/comanche-peak"
+    },
+    {
+      "permit_id": "COMANCHE_PEAK-NRC-RENEWAL",
+      "milestone_seq": 2,
+      "milestone_code": "SAFETY_REVIEW",
+      "milestone_name": "Safety Evaluation Report issued",
+      "responsible_party": "NRC Staff",
+      "date_target": "2024-03-18",
+      "date_actual": "2024-03-18",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/comanche-peak"
+    },
+    {
+      "permit_id": "COMANCHE_PEAK-NRC-RENEWAL",
+      "milestone_seq": 3,
+      "milestone_code": "EIS_FINAL",
+      "milestone_name": "Final Supplemental EIS published",
+      "responsible_party": "NRC Staff",
+      "date_target": "2024-04-26",
+      "date_actual": "2024-04-26",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/comanche-peak"
+    },
+    {
+      "permit_id": "COMANCHE_PEAK-NRC-RENEWAL",
+      "milestone_seq": 4,
+      "milestone_code": "LICENSE_ISSUED",
+      "milestone_name": "Renewed licenses issued (Unit 1 to 2050; Unit 2 to 2053)",
+      "responsible_party": "NRC Commissioners",
+      "date_target": "2024-07-31",
+      "date_actual": "2024-07-30",
+      "status": "Complete",
+      "source_url": "https://investor.vistracorp.com/2024-07-30-Vistra-Receives-Approval-to-Operate-Comanche-Peak-Nuclear-Plant-Through-2053"
+    }
+  ]
+}

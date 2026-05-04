@@ -1,0 +1,569 @@
+/* TANEO Permitting Dashboard — Penney Design System
+   Aesthetic: 1940s American Trade Journal
+   Fonts loaded via <link> in each HTML head (not @import — that would chain
+   the request behind this stylesheet's parse and add ~200–500ms to first paint). */
+
+:root {
+  /* Primary palette */
+  --ink: #1A1A1A;
+  --newsprint: #F5F2E8;
+  --paper: #FDFCF9;
+  --warm-gray: #6B6759;          /* Darkened from #9C9788 for WCAG AA */
+
+  /* Spot colors */
+  --industrial-red: #8B2B2B;
+  --utility-blue: #2B4B6F;
+  --safety-yellow: #C4A035;
+  --technical-green: #3D5C3D;
+
+  /* Extended grays */
+  --gray-90: #2D2D2D;
+  --gray-70: #5C5C5C;
+  --gray-50: #8A8A8A;
+  --gray-30: #B8B8B8;
+  --gray-15: #DCDCDC;
+
+  /* Type — Source Serif 4 from Google Fonts (closest to Plantin/Charter
+     aesthetic on a free CDN); fall back to system Charter / Georgia if the
+     CDN is unreachable. IBM Plex Mono ships from the same Google Fonts call. */
+  --serif: "Source Serif 4", "Charter", "Georgia", "Plantin", serif;
+  --mono: "IBM Plex Mono", "Consolas", "Courier New", monospace;
+
+  /* Spacing (6pt baseline) */
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 18px;
+  --space-lg: 24px;
+  --space-xl: 36px;
+  --space-2xl: 48px;
+}
+
+/* Reset and base */
+* { box-sizing: border-box; }
+
+/* Keyboard focus — required for WCAG 2.4.7 (Focus Visible). The default
+   browser outline is invisible against the newsprint background; replace
+   with a high-contrast Industrial Red ring. */
+:focus-visible {
+  outline: 2px solid var(--industrial-red);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+a:focus-visible { background: rgba(196, 160, 53, 0.18); }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--newsprint);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 700;
+  margin: 0 0 var(--space-md) 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 32px; letter-spacing: -0.01em; }
+h2 { font-size: 24px; border-bottom: 2px solid var(--ink); padding-bottom: var(--space-xs); margin-top: var(--space-xl); }
+h3 { font-size: 18px; }
+h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-70); }
+
+p { margin: 0 0 var(--space-md) 0; }
+
+a {
+  color: var(--utility-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--ink); }
+
+code, .mono {
+  font-family: var(--mono);
+  font-size: 0.92em;
+}
+
+/* Masthead — 1940s trade journal style */
+.masthead {
+  border-top: 4px double var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.masthead .title-block {
+  flex: 1 1 auto;
+}
+
+.masthead .pub-name {
+  font-size: 12px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-70);
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.masthead h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.masthead .meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--gray-70);
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.masthead .meta span { display: block; }
+
+/* Navigation bar */
+nav.section-nav {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: var(--space-xs) 0;
+  margin-bottom: var(--space-xl);
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+nav.section-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav.section-nav a:hover,
+nav.section-nav a.active {
+  border-bottom-color: var(--industrial-red);
+}
+
+/* Lede / abstract */
+.lede {
+  font-size: 17px;
+  line-height: 1.5;
+  border-left: 3px solid var(--ink);
+  padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+  margin: 0 0 var(--space-xl) 0;
+  color: var(--gray-90);
+}
+
+/* Tables — period style */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--serif);
+  font-size: 14px;
+  margin: var(--space-md) 0 var(--space-lg) 0;
+  background: var(--paper);
+}
+
+/* Table scroll wrapper — for wide tables on narrow viewports */
+.table-scroll {
+  overflow-x: auto;
+  margin: var(--space-md) 0 var(--space-lg) 0;
+  border: 0;
+}
+.table-scroll table { margin: 0; }
+
+table caption {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--ink);
+  color: var(--newsprint);
+  caption-side: top;
+}
+
+th {
+  text-align: left;
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom: 1.5px solid var(--ink);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--newsprint);
+}
+
+td {
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom: 0.5px solid var(--gray-30);
+  vertical-align: top;
+}
+
+tr:hover td { background: var(--newsprint); }
+
+td.num, th.num { font-family: var(--mono); text-align: right; }
+td.center, th.center { text-align: center; }
+
+table.striped tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.badge.complete    { color: var(--technical-green); background: rgba(61,92,61,0.08); }
+.badge.in-progress { color: var(--utility-blue);    background: rgba(43,75,111,0.08); }
+.badge.delayed     { color: var(--industrial-red);  background: rgba(139,43,43,0.08); }
+.badge.pending     { color: var(--gray-70);         background: rgba(0,0,0,0.04); }
+.badge.not-filed   { color: var(--gray-70);         background: rgba(0,0,0,0.04); }
+.badge.pre-app     { color: var(--gray-70);         background: rgba(0,0,0,0.04); }
+.badge.projected   { color: var(--safety-yellow);   background: rgba(196,160,53,0.10); }
+.badge.gap         { color: var(--ink); background: var(--gray-15); border-style: dashed; }
+
+/* Inline grayed-italic text used for placeholders, "research reactor", etc. */
+.placeholder-text { color: var(--gray-70); font-style: italic; }
+
+/* Ultan flags — inline emphasis markers */
+.flag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 1px 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+  border: 1px solid currentColor;
+}
+.flag.estimate    { color: var(--safety-yellow); }
+.flag.gap         { color: var(--industrial-red); border-style: dashed; }
+.flag.projected   { color: var(--utility-blue); }
+.flag.dated       { color: var(--gray-70); }
+.flag.operational { color: var(--technical-green); }
+
+/* Card — used for project summaries and detail panes */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.card h3 {
+  margin-top: 0;
+  border-bottom: 0.5px solid var(--gray-50);
+  padding-bottom: var(--space-xs);
+}
+
+/* Definition list — fact sheet */
+dl.fact-sheet {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-xs) var(--space-md);
+  margin: var(--space-md) 0;
+  font-size: 14px;
+}
+
+dl.fact-sheet dt {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-70);
+  align-self: start;
+}
+
+dl.fact-sheet dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+/* Two-column layout for project detail */
+.split-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 900px) {
+  .split-2 { grid-template-columns: 1fr; }
+}
+
+/* Gantt chart container */
+.gantt {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 0;
+  margin: var(--space-md) 0 var(--space-lg) 0;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.gantt-header {
+  background: var(--ink);
+  color: var(--newsprint);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.gantt-swimlane {
+  border-bottom: 1px solid var(--gray-30);
+}
+
+.gantt-swimlane:last-child { border-bottom: none; }
+
+.gantt-swimlane-header {
+  background: var(--newsprint);
+  padding: 4px var(--space-sm);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-70);
+  border-bottom: 0.5px solid var(--gray-50);
+}
+
+.gantt-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  border-bottom: 0.5px solid var(--gray-15);
+  min-height: 28px;
+}
+
+.gantt-row:hover { background: var(--newsprint); }
+
+.gantt-label {
+  padding: 6px var(--space-sm);
+  border-right: 0.5px solid var(--gray-30);
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gantt-label .label-name {
+  font-family: var(--serif);
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.gantt-label .label-meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gray-70);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gantt-bar-track {
+  position: relative;
+  padding: 0;
+}
+
+.gantt-bar-track svg {
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+
+/* Permit matrix */
+table.matrix {
+  font-size: 12px;
+}
+
+table.matrix th, table.matrix td {
+  text-align: center;
+  vertical-align: middle;
+  padding: var(--space-xs);
+}
+
+table.matrix th.project-col, table.matrix td.project-col {
+  text-align: left;
+  font-weight: 700;
+  min-width: 220px;
+  max-width: 260px;
+}
+
+.cell {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  vertical-align: middle;
+}
+/* Each status uses BOTH a color and a distinguishable visual property
+   (border style, fill pattern, or symbol overlay) so colorblind viewers
+   and grayscale prints stay legible. */
+.cell.complete    {
+  background: var(--technical-green);
+  /* solid filled — no extra texture */
+}
+.cell.in-progress {
+  background: var(--utility-blue);
+  /* solid filled, but with a thicker border for tactile distinction */
+  border-width: 2px;
+}
+.cell.not-filed   {
+  background: var(--paper);
+  /* hollow — distinct by absence of fill */
+}
+.cell.projected   {
+  background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 2px, var(--gray-30) 2px, var(--gray-30) 4px);
+  /* diagonal stripes */
+}
+.cell.gap         {
+  background: var(--gray-15);
+  border-style: dashed;
+  /* dashed border — distinct outline */
+}
+.cell.na          {
+  background: transparent;
+  border: none;
+  /* invisible — no permit applies */
+}
+
+/* Footer / colophon */
+footer.colophon {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--gray-70);
+  line-height: 1.6;
+}
+
+footer.colophon p { margin-bottom: var(--space-xs); }
+
+/* Section rules */
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--ink);
+  margin: var(--space-xl) 0;
+}
+
+hr.double {
+  border: none;
+  border-top: 4px double var(--ink);
+  margin: var(--space-xl) 0;
+}
+
+/* Sources list */
+.sources {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--gray-70);
+  margin-top: var(--space-sm);
+  padding-top: var(--space-xs);
+  border-top: 0.5px solid var(--gray-30);
+}
+
+.sources strong {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.sources a { color: var(--utility-blue); }
+
+/* KPI banner — top-of-page metrics */
+.kpi-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 700px) {
+  .kpi-banner { grid-template-columns: repeat(2, 1fr); }
+}
+
+.kpi {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: var(--space-sm);
+  text-align: left;
+}
+
+.kpi .kpi-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-70);
+  margin-bottom: var(--space-xs);
+}
+
+.kpi .kpi-value {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.kpi .kpi-unit {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--gray-70);
+  margin-top: var(--space-xs);
+}
+
+/* Project link in roster */
+a.project-link {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--utility-blue);
+  display: inline-block;
+}
+
+/* Roster table — give project column breathing room */
+#project-table th:first-child, #project-table td:first-child { min-width: 180px; }
+#project-table { table-layout: auto; }
+a.project-link:hover {
+  background: var(--newsprint);
+  border-bottom-color: var(--ink);
+}
+
+/* Print adjustments */
+@media print {
+  body { background: white; max-width: none; }
+  nav.section-nav { display: none; }
+  .gantt-row:hover { background: transparent; }
+}

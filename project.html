@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TANEO Permitting Dashboard — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="title-block">
+    <p class="pub-name">Texas Advanced Nuclear Energy Office</p>
+    <h1 id="page-title">Project Detail</h1>
+  </div>
+  <div class="meta">
+    <span>Beta — Vol. 1, No. 1</span>
+    <span id="last-updated">Last updated: —</span>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="index.html">← Project Roster</a>
+  <a href="matrix.html">Permit Matrix</a>
+  <a href="guide.html">Regulatory Guide</a>
+</nav>
+
+<div id="content">
+  <p class="lede">Loading project detail…</p>
+</div>
+
+<footer class="colophon">
+  <p><strong>Sources.</strong> Each fact in the project record below carries an inline citation. Milestone dates marked "—" reflect unfiled or pre-application status, not missing data.</p>
+</footer>
+
+<script src="scripts/data-loader.js"></script>
+<script src="scripts/gantt.js"></script>
+<script>
+const projectId = getQueryParam('id');
+
+loadAllData().then(({ projects, permits, milestones, metadata }) => {
+  setLastUpdated(metadata);
+
+  const project = projects.find(p => p.project_id === projectId);
+  if (!project) {
+    document.getElementById('content').innerHTML = `
+      <p class="lede" style="color:var(--industrial-red);">Project not found. <a href="index.html">Return to roster</a>.</p>`;
+    return;
+  }
+
+  document.getElementById('page-title').textContent = project.project_name;
+  const projectPermits = permits.filter(p => p.project_id === projectId);
+  const content = document.getElementById('content');
+
+  const factSheet = `
+    <div class="card">
+      <h3>Project Fact Sheet</h3>
+      <dl class="fact-sheet">
+        <dt>Developer</dt><dd>${escapeHtml(project.developer)}</dd>
+        <dt>Technology</dt><dd>${escapeHtml(project.technology)}</dd>
+        <dt>Units</dt><dd>${project.reactor_count}</dd>
+        <dt>Capacity (MWe)</dt><dd>${project.capacity_mwe_total > 0 ? project.capacity_mwe_total.toLocaleString() : 'Research reactor'}</dd>
+        <dt>Capacity (MWt)</dt><dd>${project.capacity_mwt_total ? project.capacity_mwt_total.toLocaleString() : '—'}</dd>
+        <dt>Cooling</dt><dd>${escapeHtml(project.cooling_type)}</dd>
+        <dt>Purpose</dt><dd style="font-family: var(--serif); font-size: 13px; line-height: 1.4;">${escapeHtml(project.purpose)}</dd>
+        <dt>Site</dt><dd>${escapeHtml(project.site_locality)}, ${escapeHtml(project.site_county)} County</dd>
+        <dt>NRC Docket</dt><dd>${fieldOrGap(escapeHtml(project.nrc_docket))}</dd>
+        <dt>NRC App. Type</dt><dd>${fieldOrGap(escapeHtml(project.nrc_application_type))}</dd>
+        <dt>App. Filed</dt><dd>${fmtDate(project.nrc_application_date)}</dd>
+        <dt>App. Accepted</dt><dd>${fmtDate(project.nrc_acceptance_date)}</dd>
+        ${project.nrc_eis_scoping_notice ? `<dt>EIS Scoping</dt><dd>${fmtDate(project.nrc_eis_scoping_notice)}</dd>` : ''}
+        <dt>Target Ops</dt><dd>${valueWithFlag(project.target_commercial_ops, project.target_commercial_ops_flag)}</dd>
+        <dt>TANDF Status</dt><dd style="font-family: var(--serif); font-size: 13px; line-height: 1.4;">${escapeHtml(project.tandf_status)}</dd>
+      </dl>
+      <div class="sources">
+        <strong>Primary sources</strong><br>
+        ${project.sources.map(s => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)} ↗</a>`).join('<br>')}
+        ${project.capacity_source ? `<br><strong style="margin-top: 6px; display: inline-block;">Capacity figures</strong><br><a href="${escapeHtml(project.capacity_source.url)}" target="_blank" rel="noopener">${escapeHtml(project.capacity_source.label)} ↗</a>` : ''}
+      </div>
+    </div>
+  `;
+
+  const statusSummary = `
+    <div class="card">
+      <h3>Current Status</h3>
+      <p style="font-family: var(--serif); font-size: 15px; line-height: 1.5;">${escapeHtml(project.overall_status)}</p>
+      <h4 style="margin-top: var(--space-md);">Permit Inventory</h4>
+      ${renderPermitInventoryTable(projectPermits)}
+    </div>
+  `;
+
+  content.innerHTML = `
+    <div class="split-2">
+      ${factSheet}
+      <div>
+        ${statusSummary}
+        <div id="gantt-container"></div>
+      </div>
+    </div>
+  `;
+
+  renderGantt(projectPermits, milestones, document.getElementById('gantt-container'), project);
+}).catch(err => {
+  renderLoadError(err, '#content');
+  console.error(err);
+});
+
+function renderPermitInventoryTable(permits) {
+  if (permits.length === 0) {
+    return '<p style="font-family: var(--mono); font-size: 12px;"><span class="flag gap">[GAP]</span> No permits inventoried.</p>';
+  }
+  let html = '<table class="striped" style="font-size: 12px;"><thead><tr>';
+  html += '<th>Permit</th><th>Agency</th><th>Status</th><th>Critical?</th>';
+  html += '</tr></thead><tbody>';
+  permits.forEach(p => {
+    html += `<tr>
+      <td>${escapeHtml(p.permit_type)}</td>
+      <td><span class="mono">${escapeHtml(p.agency)}</span></td>
+      <td>${statusBadge(p.status)}</td>
+      <td class="center">${p.is_critical_path ? '●' : '<span style="color:var(--gray-50);">○</span>'}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  return html;
+}
+</script>
+
+</body>
+</html>

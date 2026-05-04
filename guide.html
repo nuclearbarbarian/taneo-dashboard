@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TANEO Permitting Dashboard — Regulatory Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="title-block">
+    <p class="pub-name">Texas Advanced Nuclear Energy Office</p>
+    <h1>Regulatory Guide</h1>
+  </div>
+  <div class="meta">
+    <span>Beta — Vol. 1, No. 1</span>
+    <span>May 2026</span>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="index.html">Project Roster</a>
+  <a href="matrix.html">Permit Matrix</a>
+  <a href="guide.html" class="active">Regulatory Guide</a>
+</nav>
+
+<p class="lede">
+  A field reference for nuclear permitting in Texas: who issues what, how long it takes,
+  and what triggers the requirement. Federal NRC licensing and state-level environmental,
+  water, and grid permits run in parallel — no state permit blocks the NRC, but a project
+  cannot operate without all of them.
+</p>
+
+<h2>Reading This Dashboard</h2>
+
+<p>Throughout the dashboard, data points carry inline <em>uncertainty flags</em> so that a reader can tell at a glance which numbers are sourced from agency records and which are still being verified or filled in.</p>
+
+<dl class="fact-sheet" style="font-size: 14px;">
+  <dt><span class="flag estimate">[ESTIMATE]</span></dt>
+  <dd>Developer-stated date or figure not confirmed by an agency record. Common on commercial-operations targets and vendor-stated capacities.</dd>
+  <dt><span class="flag gap">[GAP]</span></dt>
+  <dd>Data not currently available from public sources. Resolving the gap may require TANEO or developer input.</dd>
+  <dt><span class="flag projected">[PROJECTED]</span></dt>
+  <dd>Project is in pre-application stage; the permit or milestone is anticipated based on standard reactor configurations but has not been filed.</dd>
+  <dt><span class="flag dated">[DATED]</span></dt>
+  <dd>Information is older than six months and may no longer reflect current status. Treat as needing verification.</dd>
+  <dt><span class="flag operational">[OPERATIONAL]</span></dt>
+  <dd>Existing operating reactor; date is historical, not a forward target.</dd>
+</dl>
+
+<p>Permit statuses on the matrix and project pages use a fixed vocabulary: <strong>Approved</strong> (issued), <strong>Under Review</strong> (filed and pending agency action), <strong>Not Filed</strong> (project is docketed at NRC; this state permit is firmly required but not yet submitted), <strong>Pre-Application</strong> (no NRC docket yet, but the project is engaged with the agency), <strong>Projected</strong> (no docket; permit forecast based on standard configuration), and <strong>GAP</strong> (status not publicly available).</p>
+
+<h2>The Regulatory Architecture</h2>
+
+<p>Nuclear power reactors in the United States are licensed exclusively by the U.S. Nuclear Regulatory Commission under the Atomic Energy Act of 1954. Texas became an NRC <em>Agreement State</em> in 1963, but its delegated authority covers byproduct materials, source materials, certain special nuclear materials, and naturally occurring radioactive material — <strong>not</strong> nuclear power reactors themselves.<sup>1</sup></p>
+
+<p>This means a reactor developer in Texas needs a federal license from the NRC <em>and</em> a portfolio of state permits from TCEQ, DSHS, and ERCOT to address the air, water, waste, and grid-connection consequences of building and operating the plant. State permits do not regulate the reactor; they regulate everything around it.</p>
+
+<p>The <a href="https://gov.texas.gov/taneo">Texas Advanced Nuclear Energy Office</a> was created by HB 14 (89th Legislature, 2025) to coordinate this multi-agency process. TANEO sits within the Office of the Governor and includes a <strong>Nuclear Permitting Coordinator</strong> as a single point of contact for developers navigating the regulatory landscape.<sup>2</sup></p>
+
+<h2>State Permit Reference</h2>
+
+<h3>TCEQ — Texas Commission on Environmental Quality</h3>
+
+<table>
+  <caption>Air, water, and waste permits required for new generation</caption>
+  <thead>
+    <tr>
+      <th>Permit</th>
+      <th>What triggers it</th>
+      <th>Typical timeline</th>
+      <th>Authority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>New Source Review (NSR) Air Permit</strong></td>
+      <td>Any facility with regulated air emissions: emergency diesel generators, cooling tower drift, concrete batch plants during construction.</td>
+      <td><span class="mono">~285 days</span> for standard NSR; PSD review adds time for major sources in attainment areas.</td>
+      <td>30 TAC Ch. 116</td>
+    </tr>
+    <tr>
+      <td><strong>Permit by Rule (PBR)</strong></td>
+      <td>Smaller emission sources that fit a pre-defined regulatory category. Often used for individual emergency generators (30 TAC 106.511) or cooling towers (30 TAC 106.371).</td>
+      <td><span class="mono">~30 days</span> registration; no formal review.</td>
+      <td>30 TAC Ch. 106</td>
+    </tr>
+    <tr>
+      <td><strong>TPDES Wastewater Discharge</strong></td>
+      <td>Any discharge of treated wastewater or process water to surface waters of the state. Industrial wastewater applications must be filed at least 330 days before discharge begins.</td>
+      <td><span class="mono">~330 days</span> minimum; longer for contested cases.</td>
+      <td>30 TAC Ch. 305</td>
+    </tr>
+    <tr>
+      <td><strong>Construction Stormwater (TXR150000)</strong></td>
+      <td>Construction activity disturbing 1+ acre. NOI submitted electronically; coverage is automatic within 7 days.</td>
+      <td><span class="mono">~7 days</span> for coverage.</td>
+      <td>TPDES Construction General Permit</td>
+    </tr>
+    <tr>
+      <td><strong>Water Rights</strong></td>
+      <td>Any diversion, impoundment, or use of surface water — including reactor cooling water. In watermaster basins (Brazos, Concho, Rio Grande, South Texas), additional oversight applies.</td>
+      <td><span class="mono">~300 days</span> uncontested; contested cases (SOAH) considerably longer.</td>
+      <td>Texas Water Code Ch. 11</td>
+    </tr>
+    <tr>
+      <td><strong>Low-Level Radioactive Waste Disposal</strong></td>
+      <td>Disposal of operational waste from reactor operations.</td>
+      <td>Project-specific.</td>
+      <td>30 TAC Ch. 336</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>DSHS — Department of State Health Services</h3>
+
+<table>
+  <caption>Radioactive materials licensing outside NRC reactor scope</caption>
+  <thead>
+    <tr>
+      <th>Permit</th>
+      <th>What triggers it</th>
+      <th>Typical timeline</th>
+      <th>Authority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Radioactive Materials License</strong></td>
+      <td>Handling, processing, storage, or transport of byproduct or source materials not covered by the NRC operating license. Required for nuclear facilities for ancillary materials handling.</td>
+      <td><span class="mono">~180 days</span> standard.</td>
+      <td>25 TAC Ch. 289 (Radiation Control Program)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>ERCOT — Electric Reliability Council of Texas</h3>
+
+<table>
+  <caption>Grid interconnection for new generation</caption>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>What it is</th>
+      <th>Typical timeline</th>
+      <th>Authority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Generation Interconnection or Change Request (GINR)</strong></td>
+      <td>Application to connect new generation 10+ MW to the ERCOT grid. Submitted via the RIOO-IS system.</td>
+      <td><span class="mono">18–30 months</span> for large generation through Full Interconnection Study and IA execution.</td>
+      <td>ERCOT Nodal Protocols §5</td>
+    </tr>
+    <tr>
+      <td><strong>Full Interconnection Study (FIS)</strong></td>
+      <td>Performed by the host Transmission and Distribution Service Provider (TDSP) on behalf of ERCOT. Includes steady-state, short-circuit, and stability studies. Required before an Interconnection Agreement is executed.</td>
+      <td><span class="mono">Months</span>; embedded in the GINR critical path.</td>
+      <td>ERCOT Nodal Operating Guides §3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-family: var(--mono); font-size: 12px; color: var(--gray-70);">
+The Public Utility Commission of Texas (PUC) does not directly license generation in deregulated ERCOT — there is no Certificate of Convenience and Necessity (CCN) requirement for merchant generation. PUC has discussed nuclear-specific interconnection allowances (potentially 1.5× the standard 345-kV connection allowance) but no final rule had been issued as of last update.
+</p>
+
+<h2>What Texas Does Not Do</h2>
+
+<p>Two regulatory features common in other states are <em>absent</em> in Texas, and this materially affects nuclear permitting timelines:</p>
+
+<ul style="font-family: var(--serif); font-size: 14px; line-height: 1.6;">
+  <li><strong>No state NEPA equivalent.</strong> Texas does not have a state-level environmental impact assessment law. The Council on Environmental Quality's list of states with NEPA-like environmental planning requirements does not include Texas. The NRC conducts its own NEPA review as part of federal licensing — typically a full Environmental Impact Statement for new commercial reactors, but in some cases an Environmental Assessment with FONSI (e.g., the Long Mott CP).<sup>3</sup></li>
+  <li><strong>No county zoning authority.</strong> Texas counties cannot zone. They can regulate platting and a narrow set of specific topics, but cannot prohibit a nuclear plant through land-use law. Municipalities have zoning authority within city limits and (limited) ETJ authority. Most nuclear sites are in unincorporated areas where county authority is minimal.<sup>4</sup></li>
+</ul>
+
+<p>The practical effect: state permitting in Texas is faster than in California or New York, but it still runs in parallel with the dominant federal NRC track. The binding constraint on a Texas nuclear project's commercial-operations date is almost always either the NRC license or the ERCOT interconnection — not a state environmental permit.</p>
+
+<h2>TANDF — Texas Advanced Nuclear Development Fund</h2>
+
+<p>HB 14 created the Texas Advanced Nuclear Development Fund alongside TANEO. The fund is appropriated <strong>$350 million</strong> via HB 500 for the FY 2026–2027 biennium, scalable to $2 billion. It runs three programs:</p>
+
+<table>
+  <thead>
+    <tr><th>Program</th><th>Purpose</th><th>Cap per project</th><th>Eligibility</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Construction Reimbursement</strong></td>
+      <td>Reimburse NRC review costs, long-lead component procurement, and construction activities.</td>
+      <td>Lesser of 50% of expenses or $100M</td>
+      <td>Requires docketed NRC construction permit or license application by Dec. 1, 2026.</td>
+    </tr>
+    <tr>
+      <td><strong>Project Development &amp; Supply Chain</strong></td>
+      <td>Reimburse technology development, feasibility studies, environmental characterization, NRC ESP preparation, manufacturing capacity, fuel cycle activities, and state/local permit preparation.</td>
+      <td>Lesser of 50% of expenses or $12.5M</td>
+      <td>No NRC docketing requirement.</td>
+    </tr>
+    <tr>
+      <td><strong>Completion Bonus</strong></td>
+      <td>Per-megawatt grants for operational reactors connected to the ERCOT grid.</td>
+      <td>Per-MW formula</td>
+      <td>PUC advises; reactor must be operating on ERCOT.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-family: var(--mono); font-size: 12px; color: var(--gray-70);">
+Restriction: TANDF reimburses only expenses paid with the applicant's own funds — not those already covered by federal, state, or local assistance. Application notices of intent were due April 23, 2026; full applications due May 14, 2026.
+</p>
+
+<h2>Public Information and Trade-Secret Considerations</h2>
+
+<p>The Texas Public Information Act (Chapter 552, Government Code) presumes all government information is public. Several exemptions are likely to apply to nuclear permitting records and shape what TANEO can publish:</p>
+
+<ul style="font-family: var(--serif); font-size: 14px; line-height: 1.6;">
+  <li><strong>§ 552.110</strong> — Trade secrets and commercial/financial information. Likely applicable to proprietary reactor designs, cost data, and competitive business plans submitted with TANDF applications.</li>
+  <li><strong>§ 552.139</strong> — Computer security and infrastructure information.</li>
+  <li><strong>Tex. Gov't Code § 418.177 / 418.181</strong> — Critical infrastructure risk and vulnerability assessments. Nuclear facilities clearly qualify as critical infrastructure under the statute's broad definition.</li>
+  <li><strong>Federal preemption</strong> — NRC Safeguards Information (10 CFR 73.21–23) and Classified National Security Information override state disclosure requirements.</li>
+</ul>
+
+<p>The dashboard publishes only milestone metadata (dates, statuses, agency points of contact, public source citations) — not full application contents. This mirrors the FAI playbook's recommendation: "Limit the dashboard to milestone metadata. Suppress direct personal identifiers; publish only business contact information."</p>
+
+<footer class="colophon">
+  <p><strong>Notes.</strong></p>
+  <p>1. <a href="https://www.dshs.texas.gov/texas-radiation-control/radioactive-material-licensing-radiation-control-program/radioactive-materials-program-authorization-and-scope">DSHS Radioactive Materials Program Authorization and Scope</a>; <a href="https://www.nrc.gov/agreement-states/texas">NRC Texas Agreement State Page</a>.</p>
+  <p>2. <a href="https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00014S.htm">Texas Legislature, HB 14 Senate Committee Report Analysis</a>.</p>
+  <p>3. <a href="https://ceq.doe.gov/laws-regulations/states.html">Council on Environmental Quality, States with NEPA-like Requirements</a>.</p>
+  <p>4. <a href="https://statutes.capitol.texas.gov/Docs/LG/htm/LG.42.htm">Texas Local Government Code, Chapter 42</a>.</p>
+  <p style="margin-top: var(--space-md);"><strong>Methodology.</strong> This guide is a beta reference, not legal advice. Permit timelines reflect typical agency processing times for uncontested applications; contested cases or applications with deficiencies will take longer. For authoritative guidance on a specific application, consult the issuing agency's published procedures and statutory references.</p>
+</footer>
+
+</body>
+</html>
