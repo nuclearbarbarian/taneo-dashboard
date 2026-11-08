@@ -1,6 +1,7 @@
 {
   "metadata": {
     "last_updated": "2026-05-04",
+    "corrections_note": "Targeted corrections 2026-11-08 to specific records only; last_updated still marks the most recent full verification.",
     "data_source_note": "Manually curated from NRC, TCEQ, ERCOT, and developer public records. This is a beta dataset; gaps and developer estimates are flagged inline.",
     "ultan_flags": {
       "ESTIMATE": "Developer-stated date not confirmed by agency record",
@@ -31,8 +32,8 @@
       "nrc_application_date": "2025-03-31",
       "nrc_acceptance_date": "2025-05-12",
       "nrc_target_decision": "2026-Q4",
-      "tandf_status": "Eligible \u2014 application window open",
-      "overall_status": "NRC review underway; EA + FONSI targeted June 2026; SER targeted November 2026; ASLB hearing process active",
+      "tandf_status": "RFA window closed; no award publicly confirmed",
+      "overall_status": "NRC review underway; EA + FONSI completed May 18, 2026; Final SER completed October 30, 2026; hearing and CP decision pending",
       "is_operational": false,
       "target_construction_start": "2026",
       "target_commercial_ops": "Early 2030s",
@@ -57,6 +58,14 @@
         {
           "label": "Federal Register — ASLB Hearing Notice (Feb 20, 2026)",
           "url": "https://www.federalregister.gov/documents/2026/02/20/2026-03415/atomic-safety-and-licensing-board-panel-before-administrative-judges-stefan-r-wolfe-chair-dr-david-a"
+        },
+        {
+          "label": "X-energy: NRC Completes Safety Review of the Xe-100 (Oct 30, 2026)",
+          "url": "https://x-energy.com/news/nrc-completes-landmark-safety-review-of-x-energys-xe-100-smr/"
+        },
+        {
+          "label": "TANEO: Texas Advanced Nuclear Development Fund (RFAs closed)",
+          "url": "https://gov.texas.gov/taneo/page/tandf"
         }
       ],
       "capacity_source": {
@@ -85,7 +94,7 @@
       "nrc_acceptance_date": "2025-09-10",
       "nrc_eis_scoping_notice": "2026-03-20",
       "nrc_target_decision": "GAP",
-      "tandf_status": "Eligible \u2014 application window open",
+      "tandf_status": "RFA window closed; no award publicly confirmed",
       "overall_status": "COLA Parts 1 and 2 accepted by NRC (Sept 10, 2025); first new large LWR COLA accepted since the 2007\u20132009 wave; environmental scoping underway",
       "is_operational": false,
       "target_construction_start": "GAP",
@@ -99,6 +108,10 @@
         {
           "label": "Power Magazine \u2014 NRC Accepts Fermi COLA",
           "url": "https://www.powermag.com/nrc-accepts-cola-for-fermi-americas-behemoth-four-unit-ap1000-nuclear-plant-in-texas/"
+        },
+        {
+          "label": "TANEO: Texas Advanced Nuclear Development Fund (RFAs closed)",
+          "url": "https://gov.texas.gov/taneo/page/tandf"
         }
       ],
       "capacity_source": {
@@ -126,7 +139,7 @@
       "nrc_application_date": "GAP",
       "nrc_acceptance_date": "GAP",
       "nrc_target_decision": "GAP",
-      "tandf_status": "Not yet docketed at NRC; eligible for development/supply chain track only",
+      "tandf_status": "Not yet docketed at NRC; RFA window closed",
       "overall_status": "NRC pre-application engagement; site control obtained",
       "is_operational": false,
       "target_construction_start": "GAP",
@@ -140,6 +153,10 @@
         {
           "label": "World Nuclear News \u2014 Last Energy Texas",
           "url": "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant"
+        },
+        {
+          "label": "TANEO: Texas Advanced Nuclear Development Fund (RFAs closed)",
+          "url": "https://gov.texas.gov/taneo/page/tandf"
         }
       ],
       "capacity_source": {
@@ -168,8 +185,8 @@
       "nrc_application_date": "2022-08-15",
       "nrc_acceptance_date": "GAP",
       "nrc_target_decision": "2024-09-16 (CP issued); OL application target was H1 2025 [DATED]",
-      "tandf_status": "Texas Legislature appropriated $120M (89th Session, 2025) to TTU/ACU/Natura partnership for MSR-1 and produced-water research; eligible for TANDF design/supply chain portions",
-      "overall_status": "Construction Permit issued Sept 16, 2024; Operating License application in preparation",
+      "tandf_status": "Texas Legislature appropriated $120M (89th Session, 2025) to TTU/ACU/Natura partnership for MSR-1 and produced-water research; RFA window closed",
+      "overall_status": "Construction Permit issued Sept 16, 2024; initial operation planned under DOE authorization (Reactor Pilot Program); NRC licensing as a research reactor to continue afterward",
       "is_operational": false,
       "target_construction_start": "2024",
       "target_commercial_ops": "GAP",
@@ -186,6 +203,18 @@
         {
           "label": "ACU \u2014 Texas Legislature funds water desalination through TTU/ACU/Natura partnership (July 1, 2025)",
           "url": "https://acu.edu/2025/07/01/texas-legislature-funds-water-desalination-through-texas-tech-acu-natura-resources-partnership/"
+        },
+        {
+          "label": "ANS Nuclear Newswire: Natura executes an OTA with the DOE (Dec 19, 2025)",
+          "url": "https://www.ans.org/news/article-7631/natura-executes-an-ota-with-the-doe/"
+        },
+        {
+          "label": "Exchange Monitor: Natura to pursue DOE authorization under Reactor Pilot Program (Dec 17, 2025)",
+          "url": "https://www.exchangemonitor.com/natura-resources-to-pursue-doe-authorization-under-reactor-pilot-program"
+        },
+        {
+          "label": "TANEO: Texas Advanced Nuclear Development Fund (RFAs closed)",
+          "url": "https://gov.texas.gov/taneo/page/tandf"
         }
       ],
       "capacity_source": {
@@ -237,7 +266,7 @@
     {
       "project_id": "STP",
       "project_name": "South Texas Project (Units 1 and 2)",
-      "developer": "STP Nuclear Operating Company (STPNOC) \u2014 owners: NRG Energy, CPS Energy, Austin Energy",
+      "developer": "STP Nuclear Operating Company (STPNOC) \u2014 owners: Constellation (44%), CPS Energy (40%), Austin Energy (16%)",
       "technology": "Westinghouse 4-loop PWR",
       "reactor_count": 2,
       "capacity_mwe_per_unit": 1280,
@@ -255,7 +284,7 @@
       "nrc_acceptance_date": "GAP",
       "nrc_target_decision": "2017 (renewed licenses issued)",
       "tandf_status": "Operational fleet \u2014 TANDF eligibility limited to potential new units at site",
-      "overall_status": "Operating; license renewed November 2017 (Unit 1 to 2047; Unit 2 to 2048)",
+      "overall_status": "Operating; license renewed September 2017 (Unit 1 to 2047; Unit 2 to 2048)",
       "is_operational": true,
       "target_construction_start": null,
       "target_commercial_ops": "Unit 1 in service since 1988; Unit 2 since 1989",
@@ -268,6 +297,14 @@
         {
           "label": "NRC South Texas Project License Renewal",
           "url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/south-texas.html"
+        },
+        {
+          "label": "NRC: South Texas Project renewed licenses issuance letter (Sept 28, 2017)",
+          "url": "https://www.nrc.gov/docs/ML1714/ML17146B078.pdf"
+        },
+        {
+          "label": "World Nuclear News: Constellation completes South Texas acquisition",
+          "url": "https://world-nuclear-news.org/articles/constellation-energy-completes-south-texas-acquisi"
         }
       ],
       "capacity_source": {
@@ -278,7 +315,7 @@
     {
       "project_id": "COMANCHE_PEAK",
       "project_name": "Comanche Peak Nuclear Power Plant (Units 1 and 2)",
-      "developer": "Vistra (Luminant subsidiary)",
+      "developer": "Vistra (via its Luminant business)",
       "technology": "Westinghouse 4-loop PWR",
       "reactor_count": 2,
       "capacity_mwe_per_unit": 1200,
@@ -309,6 +346,10 @@
         {
           "label": "Vistra \u2014 Comanche Peak License Extension Announcement",
           "url": "https://investor.vistracorp.com/2024-07-30-Vistra-Receives-Approval-to-Operate-Comanche-Peak-Nuclear-Plant-Through-2053"
+        },
+        {
+          "label": "Power Engineering: Vistra seeks 20-year extension of Luminant's Comanche Peak (Oct 4, 2022)",
+          "url": "https://www.power-eng.com/nuclear/vistra-wants-to-extend-comanche-peak-nuclear-license-for-another-20-years/"
         }
       ],
       "capacity_source": {

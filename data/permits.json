@@ -1,6 +1,7 @@
 {
   "metadata": {
     "last_updated": "2026-05-04",
+    "corrections_note": "Targeted corrections 2026-11-08 to specific records only; last_updated still marks the most recent full verification.",
     "note": "Permit inventory by project. Status values: Approved (issued); Under Review (filed and pending); Not Filed (project is docketed at NRC and the permit is firmly required, but the application has not yet been submitted); Pre-Application (no NRC docket yet, but the permit is anticipated and the project is engaged with the agency); Projected (no NRC docket; project is at conceptual / pre-application stage and the permit is forecast based on standard reactor configurations); GAP (status not publicly available); N/A (not applicable). The Not Filed vs. Projected distinction tracks NRC docketing — Long Mott (docketed) carries Not Filed for unfiled state permits; Last Energy and TAMU (no docket) carry Projected. Critical Path = permit governs project go/no-go timing. agency_target_days = typical processing time published by the issuing agency, NOT a statutory deadline. Texas permits in this dataset do not have hard statutory clocks."
   },
   "permits": [
@@ -14,7 +15,7 @@
       "application_date": "2025-03-31",
       "status": "Under Review",
       "is_critical_path": true,
-      "notes": "10 CFR Part 50. NRC published review schedule (ML25155B841) targets EA + FONSI by June 2026, SER by November 2026, CP decision by end of 2026. NRC chose to prepare an Environmental Assessment rather than a full EIS \u2014 an unusual choice for a commercial power reactor construction permit. ASLB hearing process active; San Antonio Bay Estuarine Waterkeeper admitted as intervenor in 2025\u20132026 proceedings.",
+      "notes": "10 CFR Part 50. NRC issued the EA + FONSI on May 18, 2026 and the Final SER was completed October 30, 2026, both ahead of the published schedule (ML25155B841, which targeted June and November 2026). CP decision pending; NRC lists hearing and decision dates as TBD. NRC chose to prepare an Environmental Assessment rather than a full EIS \u2014 an unusual choice for a commercial power reactor construction permit. ASLB hearing process active; San Antonio Bay Estuarine Waterkeeper admitted as intervenor in 2025\u20132026 proceedings.",
       "source_url": "https://www.federalregister.gov/documents/2025/06/10/2025-10505/long-mott-energy-llc-long-mott-generating-station-construction-permit-application"
     },
     {
@@ -261,8 +262,8 @@
       "application_date": "GAP",
       "status": "GAP",
       "is_critical_path": true,
-      "notes": "Operating license application targeted for first half 2025 per ACU; submission status not confirmed in public NRC records [DATED — target window has passed; status needs verification].",
-      "source_url": "https://www.nrc.gov/reactors/non-power/new-facility-licensing/msrr-acu"
+      "notes": "Operating license application targeted for first half 2025 per ACU; submission not confirmed in public records. Under a December 2025 DOE Reactor Pilot Program agreement, initial operation is planned under DOE authorization, with NRC licensing as a research reactor to continue afterward.",
+      "source_url": "https://www.exchangemonitor.com/natura-resources-to-pursue-doe-authorization-under-reactor-pilot-program"
     },
     {
       "permit_id": "ACU_MSRR-TCEQ-AIR",

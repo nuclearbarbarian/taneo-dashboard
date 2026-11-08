@@ -442,6 +442,10 @@ table.matrix th.project-col, table.matrix td.project-col {
   background: var(--paper);
   /* hollow — distinct by absence of fill */
 }
+.cell.pre-app     {
+  background: linear-gradient(90deg, var(--gray-30) 50%, var(--paper) 50%);
+  /* half filled: engaged with the agency, nothing filed yet */
+}
 .cell.projected   {
   background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 2px, var(--gray-30) 2px, var(--gray-30) 4px);
   /* diagonal stripes */

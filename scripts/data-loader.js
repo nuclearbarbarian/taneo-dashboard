@@ -251,7 +251,8 @@ function pickMostActive(permits) {
 // True for legacy/operational permits at existing reactor sites. A milestone-
 // less permit on these projects is "historical, not tracked" — not a data gap.
 function isHistoricalPermit(permit, project) {
-  if (project && isOperating(project) && permit.status === STATUS.APPROVED) return true;
+  if (!project || !isOperating(project)) return false;
+  if (permit.status === STATUS.APPROVED) return true;
   return /existing|pre-1988|pre-1990|operational/i.test((permit.notes || '') + ' ' + (permit.permit_type || ''));
 }
 

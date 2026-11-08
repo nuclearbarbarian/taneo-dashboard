@@ -1,6 +1,7 @@
 {
   "metadata": {
     "last_updated": "2026-05-04",
+    "corrections_note": "Targeted corrections 2026-11-08 to specific records only; last_updated still marks the most recent full verification.",
     "note": "Milestone detail by permit. Only populated where verifiable from agency records. Status: Pending = not started; In Progress = active; Complete = milestone achieved; Delayed = past target with no completion. Dates in ISO 8601."
   },
   "milestones": [
@@ -77,9 +78,9 @@
       "milestone_name": "Environmental Assessment + FONSI complete",
       "responsible_party": "NRC Staff",
       "date_target": "2026-06-30",
-      "date_actual": null,
-      "status": "In Progress",
-      "source_url": "https://www.nrc.gov/docs/ML2515/ML25155B841.pdf"
+      "date_actual": "2026-05-18",
+      "status": "Complete",
+      "source_url": "https://www.nrc.gov/facilities-safety/new-reactors/advanced-reactors/who-were-working-with/advanced-reactor-application-projects/long-mott-energy-llc"
     },
     {
       "permit_id": "LONG_MOTT-NRC-CP",
@@ -88,9 +89,9 @@
       "milestone_name": "Safety Evaluation Report (SER) complete",
       "responsible_party": "NRC Staff",
       "date_target": "2026-11-30",
-      "date_actual": null,
-      "status": "In Progress",
-      "source_url": "https://www.nrc.gov/docs/ML2515/ML25155B841.pdf"
+      "date_actual": "2026-10-30",
+      "status": "Complete",
+      "source_url": "https://x-energy.com/news/nrc-completes-landmark-safety-review-of-x-energys-xe-100-smr/"
     },
     {
       "permit_id": "LONG_MOTT-NRC-CP",
@@ -268,8 +269,8 @@
       "responsible_party": "Applicant",
       "date_target": "2025-06-30",
       "date_actual": null,
-      "status": "Pending",
-      "source_url": null
+      "status": "Delayed",
+      "source_url": "https://www.exchangemonitor.com/natura-resources-to-pursue-doe-authorization-under-reactor-pilot-program"
     },
     {
       "permit_id": "ACU_MSRR-NRC-OL",
@@ -311,10 +312,10 @@
       "milestone_code": "LICENSE_ISSUED",
       "milestone_name": "Renewed licenses issued (Unit 1 to 2047; Unit 2 to 2048)",
       "responsible_party": "NRC Commissioners",
-      "date_target": "2017-11-30",
-      "date_actual": "2017-11-30",
+      "date_target": "2017-09-28",
+      "date_actual": "2017-09-28",
       "status": "Complete",
-      "source_url": "https://www.nrc.gov/reactors/operating/licensing/renewal/applications/south-texas.html"
+      "source_url": "https://www.nrc.gov/docs/ML1714/ML17146B078.pdf"
     },
     {
       "permit_id": "COMANCHE_PEAK-NRC-RENEWAL",
